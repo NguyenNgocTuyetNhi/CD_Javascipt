@@ -1,5 +1,5 @@
-let masv1=2122110579
-let hoten1= "Nguyễn Thị Yến Nhi"
+let masv1=2122110601
+let hoten1= "Nguyễn Ngọc Tuyết Nhi"
 console.log(masv1);
 console.log(hoten1);
 
