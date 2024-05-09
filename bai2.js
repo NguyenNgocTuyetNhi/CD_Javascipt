@@ -1,0 +1,14 @@
+document.getElementById("show").innerHTML=`
+<str>
+    <td>STT</td>
+    <td>Masv</td>
+    <td>Hoten</td>
+    <td>Lop</td>
+</str>
+ <str>
+    <td>STT</td>
+    <td>Masv</td>
+    <td>Hoten</td>
+    <td>Lop</td>
+</str>  
+`
