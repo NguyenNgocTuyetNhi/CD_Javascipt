@@ -1,21 +1,15 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import Logo from "./assets/images/logo1.webp";
-import Slider1 from "./assets/images/slider_1.webp";
-import Slider2 from "./assets/images/slider_1.webp";
-
-
-import { BsSearchHeart } from "react-icons/bs";
-import { IoBagRemove } from "react-icons/io5";
-import {
-  FaUserEdit,
-  FaCartPlus,
-  FaYoutube,
-  FaGoogle,
-  FaFacebook,
-  FaInstagram,
-} from "react-icons/fa";
+import Logo from "./assets/images/logo.webp";
+import ChinhSachItem from "./compoments/ChinhSachItem.jsx";
+import Product from "./compoments/ProductItem.jsx";
+import { FaRegUser } from "react-icons/fa6";
+import { CiHeart } from "react-icons/ci";
+import { MdLocalGroceryStore } from "react-icons/md";
+import { FaYoutube, FaGoogle, FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaBell } from "react-icons/fa";
+import Slider from "./compoments/Silder.jsx";
+import ProductItem from "./compoments/ProductItem.jsx";
 function App() {
   return (
     <>
@@ -77,7 +71,7 @@ function App() {
                             <a class="dropdown-item" href="#">
                               Another action
                             </a>
-</li>
+                          </li>
                           <li>
                             <hr class="dropdown-divider" />
                           </li>
@@ -109,170 +103,83 @@ function App() {
                 </div>
               </nav>
             </div>
-            <div className="col-md-2">
-              <BsSearchHeart />
-              <IoBagRemove />
-              <FaUserEdit />
-              <FaCartPlus />
-              <FaBell />
+            <div className="col-md-2 mt-1">
+              <FaRegUser style={{ fontSize: "24px", marginRight: "15px" }} />
+              <CiHeart style={{ fontSize: "24px", marginRight: "15px" }} />
+              <MdLocalGroceryStore
+                style={{ fontSize: "24px", marginRight: "15px" }}
+              />
             </div>
           </div>
         </div>
       </header>
-      <main>
-        <div id="carouselExample" class="carousel slide">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src={Slider1} class="d-block w-100" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src={Slider2} class="d-block w-100" alt="..." />
-            </div>
-            <div class="carousel-item">
-              <img src={Slider1} class="d-block w-100" alt="..." />
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExample"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExample"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
 
-        <div className="slider">
-          <div id="carouselExample" class="carousel slide">
-            
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselExample"
-              data-bs-slide="prev"
->
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselExample"
-              data-bs-slide="next"
-            >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+      <main>
+        <Slider />
+        <div className="ChinhSach">
+          <div className="row">
+            <div className="col-md-3">
+              <ChinhSachItem
+                image="https://bizweb.dktcdn.net/100/491/897/themes/915864/assets/chinhsach_1.png?1712652027135"
+                alt="chinhsach1"
+                title="Miễn Phí Vận Chuyển"
+                des="Cho đơn hàng từ 500k"
+              />
+            </div>
+            <div className="col-md-3">
+              <ChinhSachItem
+                image="https://bizweb.dktcdn.net/100/491/897/themes/915864/assets/chinhsach_1.png?1712652027135"
+                alt="chinhsach1"
+                title="Đổi hàng tận nhà"
+                des="trong vòng 7 ngày"
+              />
+            </div>
+            <div className="col-md-3">
+              <ChinhSachItem
+                image="https://bizweb.dktcdn.net/100/491/897/themes/915864/assets/chinhsach_1.png?1712652027135"
+                alt="chinhsach1"
+                title="Thanh toán COD"
+                des="hoặc thanh toán quét mã QR"
+              />
+            </div>
+            <div className="col-md-3">
+              <ChinhSachItem
+                image="https://bizweb.dktcdn.net/100/491/897/themes/915864/assets/chinhsach_1.png?1712652027135"
+                alt="chinhsach1"
+                title="Hotline: 1800 1554 "
+                des="Liên hệ từ 8h00 đến 22h00"
+              />
+            </div>
           </div>
         </div>
         <div>
           <h1 class="text-center mt-3">New Product</h1>
           <div class="row">
             <div class="col-md-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Tên sản phẩm</h5>
-                  <p class="card-text">Mô tả sản phẩm ngắn gọn.</p>
-                  <a href="#" class="btn btn-primary">
-                    Mua ngay
-                  </a>
-                </div>
-              </div>
+              <ProductItem />
             </div>
             <div class="col-md-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Tên sản phẩm</h5>
-                  <p class="card-text">Mô tả sản phẩm ngắn gọn.</p>
-                  <a href="#" class="btn btn-primary">
-                    Mua ngay
-                  </a>
-                </div>
-              </div>
+              <ProductItem />
             </div>
             <div class="col-md-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Tên sản phẩm</h5>
-                  <p class="card-text">Mô tả sản phẩm ngắn gọn.</p>
-                  <a href="#" class="btn btn-primary">
-                    Mua ngay
-                  </a>
-                </div>
-              </div>
+              <ProductItem />
             </div>
             <div class="col-md-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Tên sản phẩm</h5>
-                  <p class="card-text">Mô tả sản phẩm ngắn gọn.</p>
-                  <a href="#" class="btn btn-primary">
-                    Mua ngay
-                  </a>
-                </div>
-              </div>
+              <ProductItem />
             </div>
           </div>
           <div class="row mt-4">
             <div class="col-md-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Tên sản phẩm</h5>
-                  <p class="card-text">Mô tả sản phẩm ngắn gọn.</p>
-                  <a href="#" class="btn btn-primary">
-                    Mua ngay
-                  </a>
-                </div>
-              </div>
+              <ProductItem />
             </div>
             <div class="col-md-3">
-              <div class="card">
-<div class="card-body">
-                  <h5 class="card-title">Tên sản phẩm</h5>
-                  <p class="card-text">Mô tả sản phẩm ngắn gọn.</p>
-                  <a href="#" class="btn btn-primary">
-                    Mua ngay
-                  </a>
-                </div>
-              </div>
+              <ProductItem />
             </div>
             <div class="col-md-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Tên sản phẩm</h5>
-                  <p class="card-text">Mô tả sản phẩm ngắn gọn.</p>
-                  <a href="#" class="btn btn-primary">
-                    Mua ngay
-                  </a>
-                </div>
-              </div>
+              <ProductItem />
             </div>
             <div class="col-md-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Tên sản phẩm</h5>
-                  <p class="card-text">Mô tả sản phẩm ngắn gọn.</p>
-                  <a href="#" class="btn btn-primary">
-                    Mua ngay
-                  </a>
-                </div>
-              </div>
+              <ProductItem />
             </div>
           </div>
         </div>
@@ -280,94 +187,19 @@ function App() {
           <h1 class="text-center mt-3">Sản phẩm bán chạy</h1>
           <div class="row">
             <div class="col-md-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Tên sản phẩm</h5>
-                  <p class="card-text">Mô tả sản phẩm ngắn gọn.</p>
-                  <a href="#" class="btn btn-primary">
-                    Mua ngay
-                  </a>
-                </div>
-              </div>
+              <ProductItem />
             </div>
             <div class="col-md-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Tên sản phẩm</h5>
-                  <p class="card-text">Mô tả sản phẩm ngắn gọn.</p>
-                  <a href="#" class="btn btn-primary">
-                    Mua ngay
-                  </a>
-                </div>
-              </div>
+              <ProductItem />
             </div>
             <div class="col-md-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Tên sản phẩm</h5>
-                  <p class="card-text">Mô tả sản phẩm ngắn gọn.</p>
-                  <a href="#" class="btn btn-primary">
-                    Mua ngay
-                  </a>
-                </div>
-              </div>
+              <ProductItem />
             </div>
             <div class="col-md-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Tên sản phẩm</h5>
-                  <p class="card-text">Mô tả sản phẩm ngắn gọn.</p>
-                  <a href="#" class="btn btn-primary">
-                    Mua ngay
-                  </a>
-                </div>
-              </div>
-</div>
-          </div>
-          <div class="row mt-4">
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Tên sản phẩm</h5>
-                  <p class="card-text">Mô tả sản phẩm ngắn gọn.</p>
-                  <a href="#" class="btn btn-primary">
-                    Mua ngay
-                  </a>
-                </div>
-              </div>
+              <ProductItem />
             </div>
             <div class="col-md-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Tên sản phẩm</h5>
-                  <p class="card-text">Mô tả sản phẩm ngắn gọn.</p>
-                  <a href="#" class="btn btn-primary">
-                    Mua ngay
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Tên sản phẩm</h5>
-                  <p class="card-text">Mô tả sản phẩm ngắn gọn.</p>
-                  <a href="#" class="btn btn-primary">
-                    Mua ngay
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Tên sản phẩm</h5>
-                  <p class="card-text">Mô tả sản phẩm ngắn gọn.</p>
-                  <a href="#" class="btn btn-primary">
-                    Mua ngay
-                  </a>
-                </div>
-              </div>
+              <ProductItem />
             </div>
           </div>
         </div>
@@ -388,7 +220,7 @@ function App() {
                   </i>
                 </p>
                 <p class="pt-1">
-                  Địa chỉ: 08/11 duong 30 kp 30,TP. Thủ Đức
+                  Địa chỉ: 79, ĐS 6, P.Phước Long B ,Q9,TP. Thủ Đức
                 </p>
                 <p class="pt-1">
                   Điện thoại: 0774669214 (call, zalo) - Email:
@@ -398,7 +230,7 @@ function App() {
                 <div class="social my-3">
                   <FaFacebook />
                   <FaInstagram />
-<FaGoogle />
+                  <FaGoogle />
                   <FaYoutube />
                 </div>
               </div>
